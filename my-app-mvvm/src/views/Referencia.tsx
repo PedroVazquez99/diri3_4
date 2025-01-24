@@ -2,7 +2,7 @@
 
 function Telefono() {
   return (
-    <div>Este es el teléfono</div>
+    <div>Este es la página de referencia</div>
   )
 }
 

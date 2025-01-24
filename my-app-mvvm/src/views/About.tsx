@@ -6,7 +6,7 @@ function App() {
     <>
       <NavbarLink></NavbarLink>
       <nav>
-        <Link to="/about/ayuda">Ayuda</Link> | <Link to="/about/telefono">Teléfono</Link>
+        <Link to="/about/preguntas">Preguntas más frecuentes</Link> | <Link to="/about/referencia">Referencia</Link>
       </nav>
       <Outlet /> {/* Las rutas anidadas se renderizan aquí */}
     </>

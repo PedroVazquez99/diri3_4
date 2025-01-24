@@ -4,9 +4,8 @@ import './App.css'
 import About from './views/About'
 import NotFound from './views/NotFound'
 import TodoApp from './views/TodoApp'
-import Ayuda from './views/Ayuda'
-import Telefono from './views/Telefono'
-// import Alumnos from './views/Alumnos'
+import Referencia from './views/Referencia'
+import PreguntasFrec from './views/PreguntasFrec'
 
 function App() {
 
@@ -16,8 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<TodoApp />} />
           <Route path="/about" element={<About />} >
-            <Route path="ayuda" element={<Ayuda />} />
-            <Route path="telefono" element={<Telefono />} />
+            <Route path="preguntas" element={<PreguntasFrec />} />
+            <Route path="referencia" element={<Referencia />} />
           </Route>
           <Route path="*" element={<NotFound />} />
           {/* Resto de rutas */}
