@@ -1,10 +1,6 @@
 import IAlumno from '../interfaces/IAlumno';
 
-const alumnos: IAlumno[] = [
-    { nombre: "Juan", nota: 8 },
-    { nombre: "Luisa", nota: 4 },
-    { nombre: "Pepe", nota: 7 }
-];
+const alumnos: IAlumno[] = [];
 
 export const fetchItemsFromAPI = async (): Promise<IAlumno[]> => {
     // Aquí se haría una llamada real al API
