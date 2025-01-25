@@ -4,6 +4,7 @@ import { useTodoViewModel } from "../hooks/useAlumnoHook";
 import IAlumno from "../interfaces/IAlumno";
 import NavbarLink from "../components/NavbarLink";
 import { v4 as uuidv4 } from 'uuid';
+import Alumno from "../components/Alumno";
 
 
 // Creamos una instancia del ViewModel fuera del componente
@@ -12,11 +13,21 @@ const todoViewModel = new AlumnosVM();
 const TodoApp: React.FC = () => {
 const { items, addItem, removeItem } = useTodoViewModel(todoViewModel);
 const [newItem, setNewItem] = useState<IAlumno>({ id: '', nombre: "", nota: 0 });
+const [selectedAlumno, setSelectedAlumno] = useState<IAlumno | null>(null);
+
+const handleClicked = (alumno: IAlumno) => {
+    setSelectedAlumno(alumno);
+}
 
   return (
     <>
       <NavbarLink />
       <h1>Alumnos</h1>
+      {selectedAlumno && (
+        <div onClick={() => setSelectedAlumno(null)}>
+          <Alumno alumno={selectedAlumno} />
+        </div>
+      )}
       <div className="agregar-div">
         <input
           type="text"
@@ -46,8 +57,8 @@ const [newItem, setNewItem] = useState<IAlumno>({ id: '', nombre: "", nota: 0 })
         {items.length > 0 && (
           <ul>
             {items.map((item: IAlumno, index: number) => (
-                <li key={item.id}>
-                  <b>{item.id}</b> : {item.nombre} ha sacado un {item.nota}
+                <li key={item.id} className="liItem" onClick={() => handleClicked(item)}>
+                  <b>{item.id}</b> : {item.nombre}
                   <button
                     className="btnEliminar"
                     onClick={() => {

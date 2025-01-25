@@ -49,3 +49,16 @@ nav{
 .btnEliminar{
   margin: 1em 5em;
 }
+
+.liItem:hover{
+  cursor: pointer;
+}
+
+.liItem:focus{
+  background-color: #f0f0f0;
+}
+
+.aludiv{
+  border: 1px solid #c93636;
+  border-radius: 30px;
+}
